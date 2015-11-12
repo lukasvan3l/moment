@@ -8,22 +8,12 @@
    factory(global.moment)
 }(this, function (moment) { 'use strict';
 
-
-    var monthsShortWithDots = 'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split('_'),
-        monthsShortWithoutDots = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_');
-
     var nl = moment.defineLocale('nl', {
         months : 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split('_'),
-        monthsShort : function (m, format) {
-            if (/-MMM-/.test(format)) {
-                return monthsShortWithoutDots[m.month()];
-            } else {
-                return monthsShortWithDots[m.month()];
-            }
-        },
+        monthsShort : 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_'),
         weekdays : 'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split('_'),
-        weekdaysShort : 'zo._ma._di._wo._do._vr._za.'.split('_'),
-        weekdaysMin : 'Zo_Ma_Di_Wo_Do_Vr_Za'.split('_'),
+        weekdaysShort : 'zo_ma_di_wo_do_vr_za'.split('_'),
+        weekdaysMin : 'zo_ma_di_wo_do_vr_za'.split('_'),
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
